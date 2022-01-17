@@ -1,0 +1,19 @@
+<%- include('./partials/header.ejs')%> 
+<body>
+<%- include('./partials/nav.ejs')  %> 
+  
+  <% if(projects.length > 0){ %>
+    <% projects.forEach(project => { %> 
+      <a href="/projects/<%= project._id%>" class="link" style="text-decoration:none;">
+        <div class="container project mt-3">
+          <h3><%= project.title %> </h3>
+          <h5>Budget: <%= project.budget %> </h5>
+          <h6>Contact Number: <%= project.phone %> </h6>
+        </div>
+      </a>
+    <% })  %>   
+  <% } %>  
+
+  <%- include('./partials/footer.ejs')  %> 
+</body>
+</html>
